@@ -8,10 +8,12 @@ const mongoURI = process.env.MONGODB;
 //   connectTimeoutMS: 10000,  
 // };
 mongoose
-  .connect(mongoURI)
+  .connect(mongoURI, {  
+    useNewUrlParser: true,
+    useUnifiedTopology: true,})
   .then(() => {
     console.log('Connected to the MongoDB Successfully!')
   })
   .catch((error) => {
-    console.error('Error connecting to MongoDB:', error)
+    console.error('Error connecting to MongoDB:', error.message);
   });
