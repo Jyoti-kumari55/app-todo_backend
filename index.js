@@ -11,7 +11,10 @@ const userRoutes = require("./routes/user");
 
 
 const corsOptions = {
-  origin: "http://localhost:5173", // Your Vite dev server
+  origin: [
+    "http://localhost:5173",
+    "https://my-todo-app-frontend25.vercel.app"
+  ],
   credentials: true,
 };
 
