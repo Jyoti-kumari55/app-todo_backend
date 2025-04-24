@@ -26,9 +26,9 @@ router.post("/register", async (req, res) => {
         .json({ error: true, message: "Password is required." });
     }
 
-    const isExistingUsername = await User.findOne({ username: username });
+    const isExistingUsername = await User.findOne({ username: req.body.username });
 
-    const isExistingEmail = await User.findOne({ email: email });
+    const isExistingEmail = await User.findOne({ email: req.body.email });
 
     let userErrors = {};
 

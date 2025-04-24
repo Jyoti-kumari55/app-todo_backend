@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 // Access your MongoDB connection string from secrets
-require("dotenv").config();
+require("dotenv").config({ path: './.env' });
 const mongoURI = process.env.MONGODB;
 
 const connectionOptions = {
   socketTimeoutMS: 45000, 
-  connectTimeoutMS: 10000,  
+  connectTimeoutMS: 30000,  
 };
 mongoose
   .connect(mongoURI, connectionOptions)
