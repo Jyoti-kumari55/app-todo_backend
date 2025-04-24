@@ -3,14 +3,12 @@ const mongoose = require('mongoose')
 require("dotenv").config();
 const mongoURI = process.env.MONGODB;
 
-// const connectionOptions = {
-//   socketTimeoutMS: 45000, 
-//   connectTimeoutMS: 10000,  
-// };
+const connectionOptions = {
+  socketTimeoutMS: 45000, 
+  connectTimeoutMS: 10000,  
+};
 mongoose
-  .connect(mongoURI, {  
-    useNewUrlParser: true,
-    useUnifiedTopology: true,})
+  .connect(mongoURI, connectionOptions)
   .then(() => {
     console.log('Connected to the MongoDB Successfully!')
   })
